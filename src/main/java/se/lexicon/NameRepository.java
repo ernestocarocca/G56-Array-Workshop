@@ -68,20 +68,14 @@ public class NameRepository {
      * @return The matching name if found; otherwise, null.
      */
     public static String find(String fullName) {
-        String findedName = "";
         //todo: implement find method
         for (String name : names) {
             if (name.equalsIgnoreCase(fullName)) {
-                findedName = name;
-                return findedName;
-            }
-            {
-                return "no name";
+                return name;
             }
         }
-        return findedName;
+        return null;
     }
-
 
     /**
      * Adds a new fullName to the names array if it doesn't already exist.
@@ -98,7 +92,7 @@ public class NameRepository {
             String[] newArray = Arrays.copyOf(names, names.length + 1);
             newArray[newArray.length - 1] = fullName;
             names = newArray;
-            System.out.println("new added name"+ fullName);
+
             return true;
         }
         return false;

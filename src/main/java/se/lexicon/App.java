@@ -13,7 +13,10 @@ public class App {
         System.out.println(Arrays.toString(NameRepository.findAll()));
 
 
-        System.out.println(NameRepository.find("erik svensson"));
-        NameRepository.add("ernesto Carocca");
+
+        System.out.println("added name: " + NameRepository.add("Ernesto Carocca"));
+        System.out.println("added name: " + Arrays.toString(NameRepository.findAll()));
+        System.out.println("added name: " + NameRepository.find("ernesto carocca"));
+
     }
 }
