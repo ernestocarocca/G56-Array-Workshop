@@ -1,5 +1,6 @@
 package se.lexicon;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -45,6 +46,7 @@ public class NameRepository {
      */
     public static void clear() {
         //todo: implement clear method
+        names = new String[0];
     }
 
 
