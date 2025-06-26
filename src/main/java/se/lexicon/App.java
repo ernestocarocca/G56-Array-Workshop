@@ -11,9 +11,8 @@ public class App {
         int size = NameRepository.getSize();
         System.out.println(size);
         System.out.println(Arrays.toString(NameRepository.findAll()));
-        NameRepository.clear();
-        size = NameRepository.getSize();
-        System.out.println(size);
 
+
+        System.out.println(NameRepository.find("erik svensson"));
     }
 }
