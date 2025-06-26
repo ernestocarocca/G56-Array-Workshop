@@ -14,5 +14,6 @@ public class App {
 
 
         System.out.println(NameRepository.find("erik svensson"));
+        NameRepository.add("ernesto Carocca");
     }
 }

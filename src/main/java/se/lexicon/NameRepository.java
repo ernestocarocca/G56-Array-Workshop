@@ -68,13 +68,14 @@ public class NameRepository {
      * @return The matching name if found; otherwise, null.
      */
     public static String find(String fullName) {
-        String findedName= "";
+        String findedName = "";
         //todo: implement find method
-        for(String name: names){
-            if(name.equalsIgnoreCase(fullName)){
+        for (String name : names) {
+            if (name.equalsIgnoreCase(fullName)) {
                 findedName = name;
                 return findedName;
-            }{
+            }
+            {
                 return "no name";
             }
         }
@@ -90,6 +91,16 @@ public class NameRepository {
      */
     public static boolean add(String fullName) {
         //todo: implement add method
+        for (String name : names) {
+            if (name.equalsIgnoreCase(fullName)) {
+                return false;
+            }
+            String[] newArray = Arrays.copyOf(names, names.length + 1);
+            newArray[newArray.length - 1] = fullName;
+            names = newArray;
+            System.out.println("new added name"+ fullName);
+            return true;
+        }
         return false;
     }
 
