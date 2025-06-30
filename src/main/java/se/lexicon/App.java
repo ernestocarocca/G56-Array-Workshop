@@ -20,6 +20,9 @@ public class App {
         }
         NameRepository.add("Nelson Carocca");
         System.out.println("added new name to list " + Arrays.toString(NameRepository.findAll()));
+        NameRepository.remove("Nelson Carocca");
+        System.out.println("name removed " +  Arrays.toString(NameRepository.findAll()));
+
 
         // call more methods as needed
     }

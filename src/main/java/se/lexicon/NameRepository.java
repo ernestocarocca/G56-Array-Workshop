@@ -150,7 +150,6 @@ public class NameRepository {
         }
         if (targetIndex == -1) return false;
         names[targetIndex] = updatedName;
-        System.out.println(names[targetIndex]);
         return true;
 
 
@@ -168,11 +167,8 @@ public class NameRepository {
         List<String> list = new ArrayList<>(Arrays.asList(names));
         System.out.println("removing " + fullName);
         boolean removed = list.removeIf(n -> n.equalsIgnoreCase(fullName));
-        if(removed) names = list.toArray(new String[0]);
-        for(String name: names){
-            System.out.println("new list: " + name);
-        }
-
+        if (removed) names = list.toArray(new String[0]);
+        System.out.println("Name removed with success ");
 
         return removed;
     }
