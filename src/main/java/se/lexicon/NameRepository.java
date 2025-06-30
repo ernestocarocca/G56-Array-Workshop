@@ -109,7 +109,7 @@ public class NameRepository {
         //todo: findByFirstName method
         String firstNme = firstName.split(" ")[0];
         if (firstName.equalsIgnoreCase(firstNme)) {
-            System.out.println("Match found: " + firstName);
+            System.out.println("Found first name " + firstName);
         }
         return null;
     }
@@ -125,7 +125,7 @@ public class NameRepository {
         //todo: implement findByLastName method
         String firstNme = lastName.split(" ")[0];
         if (lastName.equalsIgnoreCase(firstNme)) {
-            System.out.println("Match found: " + lastName);
+            System.out.println("Found lastname: " + lastName);
         }
         return null;
     }
@@ -174,7 +174,7 @@ public class NameRepository {
         }
 
 
-        return false;
+        return removed;
     }
 
 
