@@ -107,6 +107,10 @@ public class NameRepository {
      */
     public static String[] findByFirstName(String firstName) {
         //todo: findByFirstName method
+        String firstNme = firstName.split(" ")[0];
+        if (firstName.equalsIgnoreCase(firstNme)) {
+            System.out.println("Match found: " + firstName);
+        }
         return null;
     }
 
@@ -119,6 +123,10 @@ public class NameRepository {
      */
     public static String[] findByLastName(String lastName) {
         //todo: implement findByLastName method
+        String firstNme = lastName.split(" ")[0];
+        if (lastName.equalsIgnoreCase(firstNme)) {
+            System.out.println("Match found: " + lastName);
+        }
         return null;
     }
 
@@ -132,7 +140,20 @@ public class NameRepository {
      */
     public static boolean update(String original, String updatedName) {
         //todo: implement update method
-        return false;
+        if (original == null || updatedName == null) return false;
+        int targetIndex = -1;
+        for (int i = 0; i < names.length; i++) {
+            if (names[i].equalsIgnoreCase(original)) {
+                targetIndex = i;
+                break;
+            }
+        }
+        if (targetIndex == -1) return false;
+        names[targetIndex] = updatedName;
+        System.out.println(names[targetIndex]);
+        return true;
+
+
     }
 
 
@@ -144,6 +165,15 @@ public class NameRepository {
      */
     public static boolean remove(String fullName) {
         //todo: implement remove method
+        List<String> list = new ArrayList<>(Arrays.asList(names));
+        System.out.println("removing " + fullName);
+        boolean removed = list.removeIf(n -> n.equalsIgnoreCase(fullName));
+        if(removed) names = list.toArray(new String[0]);
+        for(String name: names){
+            System.out.println("new list: " + name);
+        }
+
+
         return false;
     }
 
